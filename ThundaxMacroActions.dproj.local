@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2013/02/01 21:59:54.000.863,=C:\Users\jordi coll\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013/02/01 22:21:39.000.350,C:\Users\jordi coll\Desktop\ThundaxMacroActions\Unit1.dfm=C:\Users\jordi coll\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2013/02/01 22:21:39.000.350,C:\Users\jordi coll\Desktop\ThundaxMacroActions\Unit1.pas=C:\Users\jordi coll\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2013/02/01 22:21:49.000.616,C:\Users\jordi coll\Desktop\ThundaxMacroActions\ThundaxMacroActions.dproj=C:\Users\jordi coll\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2013/02/01 22:35:39.000.302,=C:\Users\jordi coll\Desktop\ThundaxMacroActions\Unit2.pas</Transaction>
+    <Transaction>2013/02/01 22:35:54.000.468,C:\Users\jordi coll\Desktop\ThundaxMacroActions\thundax.lib.actions.pas=C:\Users\jordi coll\Desktop\ThundaxMacroActions\Unit2.pas</Transaction>
+    <Transaction>2013/02/03 10:05:40.000.358,C:\Users\jordi coll\Desktop\ThundaxMacroActions\Unit1.pas=C:\Users\jordi coll\Desktop\ThundaxMacroActions\frmAction.pas</Transaction>
+    <Transaction>2013/02/03 10:05:40.000.358,C:\Users\jordi coll\Desktop\ThundaxMacroActions\Unit1.dfm=C:\Users\jordi coll\Desktop\ThundaxMacroActions\frmAction.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
