@@ -19,3 +19,6 @@ TODO items:
   - Add Save/Load functionality
   - Add more actions
   - Add more special key strokes
+
+**Download the latest version here:**
+- [Thundax Macro Actions v1.0](https://app.box.com/s/ra2zq1632cfbvupbhe9l6n9u205o9fvz)
