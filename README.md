@@ -22,3 +22,8 @@ TODO items:
 
 **Download the latest version here:**
 - [Thundax Macro Actions v1.0](https://app.box.com/s/ra2zq1632cfbvupbhe9l6n9u205o9fvz)
+
+## Sponsors
+No sponsors yet! Will you be the first?
+
+[![PayPayl donate button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L5FCF6LX5C9AW "Donate once-off to this project using Paypal")
