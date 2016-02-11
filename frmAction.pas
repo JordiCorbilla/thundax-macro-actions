@@ -35,7 +35,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Buttons, ComCtrls, StdCtrls, thundax.lib.actions, ExtCtrls;
+  Dialogs, Buttons, ComCtrls, StdCtrls, thundax.lib.actions, ExtCtrls,
+  Vcl.Samples.Spin;
 
 type
   TfrmActions = class(TForm)
@@ -62,6 +63,11 @@ type
     btnUp: TSpeedButton;
     btnDown: TSpeedButton;
     Label7: TLabel;
+    TabSheet3: TTabSheet;
+    Label8: TLabel;
+    edtTime: TSpinEdit;
+    Label9: TLabel;
+    btnStop: TSpeedButton;
     procedure btnSequenceClick(Sender: TObject);
     procedure btnAddActionClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -94,6 +100,8 @@ var
   numTimes: Integer;
 begin
   numTimes := StrToInt(Edit3.Text);
+  if numTimes > 0 then
+  begin
   for j := 0 to numTimes - 1 do
   begin
     for i := 0 to ListBox1.Items.Count - 1 do
@@ -104,6 +112,14 @@ begin
       Sleep(200);
       ListBox1.SetFocus;
       Application.ProcessMessages;
+    end;
+  end;
+  end
+  else
+  begin
+    while True do
+    begin
+
     end;
   end;
 end;
@@ -143,6 +159,12 @@ begin
           raise Exception.Create('Fields must contain valid coordinates');
         action := TAction<String>.Create(actionType, TParameters<String>.Create(edtFreeText.Text, ''));
       end;
+    TWait:
+      begin
+        if (edtTime.Value = 0) then
+          raise Exception.Create('Field must contain time greater than zero');
+        action := TAction<Integer>.Create(actionType, TParameters<Integer>.Create(edtTime.Value, 0));
+      end;
   end;
 
   list.Add(action);
@@ -178,6 +200,8 @@ begin
     actionType := TKey;
   if description = 'Type message' then
     actionType := TMessage;
+  if description = 'Wait (s)' then
+    actionType := TWait;
   result := actionType;
 end;
 
@@ -231,12 +255,15 @@ begin
   edtY.Enabled := True;
   cmbStrokes.Enabled := True;
   edtFreeText.Enabled := True;
+  edtTime.Enabled := True;
+  btnAddAction.Enabled := True;
 
   case actionType of
     tMousePos:
       begin
         cmbStrokes.Enabled := false;
         edtFreeText.Enabled := false;
+        edtTime.Enabled := false;
         PageControl1.ActivePageIndex := 0;
       end;
     TMouseLClick, TMouseLDClick, TMouseRClick, TMouseRDClick:
@@ -245,6 +272,7 @@ begin
         edtY.Enabled := false;
         cmbStrokes.Enabled := false;
         edtFreeText.Enabled := false;
+        edtTime.Enabled := false;
         PageControl1.ActivePageIndex := 0;
       end;
     TKey:
@@ -252,6 +280,7 @@ begin
         edtX.Enabled := false;
         edtY.Enabled := false;
         edtFreeText.Enabled := false;
+        edtTime.Enabled := false;
         PageControl1.ActivePageIndex := 1;
       end;
     TMessage:
@@ -259,7 +288,16 @@ begin
         edtX.Enabled := false;
         edtY.Enabled := false;
         cmbStrokes.Enabled := false;
+        edtTime.Enabled := false;
         PageControl1.ActivePageIndex := 1;
+      end;
+    TWait:
+      begin
+        edtX.Enabled := false;
+        edtY.Enabled := false;
+        cmbStrokes.Enabled := false;
+        edtTime.Enabled := true;
+        PageControl1.ActivePageIndex := 2;
       end;
   end;
 end;

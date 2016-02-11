@@ -37,7 +37,7 @@ uses
   Generics.Collections;
 
 type
-  TActionType = (tMousePos, TMouseLClick, TMouseLDClick, TMouseRClick, TMouseRDClick, TKey, TMessage);
+  TActionType = (tMousePos, TMouseLClick, TMouseLDClick, TMouseRClick, TMouseRDClick, TKey, TMessage, TWait);
 
   TActionTypeHelper = class(TObject)
     class function CastToString(action: TActionType): string;
@@ -192,6 +192,8 @@ begin
       TypeMessage(getKey(param.StringConverterP1));
     TMessage:
       TypeMessage(param.StringConverterP1);
+    TWait:
+      Sleep(param.IntegerConverterP1 * 1000);
   end;
 end;
 
