@@ -12,7 +12,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Carbon');
+  TStyleManager.TrySetStyle('Luna');
   Application.Title := 'Thundax Macro Actions';
   Application.CreateForm(TfrmActions, frmActions);
   Application.Run;

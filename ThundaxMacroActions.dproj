@@ -43,7 +43,7 @@
     <PropertyGroup Condition="'$(Base)'!=''">
         <VerInfo_Keys>CompanyName=Jordi Corbilla;FileDescription=Thundax Macro Actions;FileVersion=1.0.0.0;InternalName=Thundax Macro Actions;LegalCopyright=Jordi Corbilla;LegalTrademarks=Jordi Corbilla;OriginalFilename=Thundax Macro Actions;ProductName=Thundax Macro Actions;ProductVersion=1.0.0.0;Comments=Thundax Macro Actions</VerInfo_Keys>
         <VerInfo_Locale>2057</VerInfo_Locale>
-        <VCL_Custom_Styles>Carbon|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\14.0\Styles\Carbon.vsf</VCL_Custom_Styles>
+        <VCL_Custom_Styles>Luna|VCLSTYLE|$(PUBLIC)\Documents\Embarcadero\Studio\14.0\Styles\Luna.vsf</VCL_Custom_Styles>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <SanitizedProjectName>ThundaxMacroActions</SanitizedProjectName>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>

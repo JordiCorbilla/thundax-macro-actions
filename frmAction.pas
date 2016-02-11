@@ -78,10 +78,11 @@ type
     procedure btnUpClick(Sender: TObject);
     procedure btnDownClick(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
+    procedure btnStopClick(Sender: TObject);
   private
     function GetActionType(description: string): TActionType;
   public
-    { Public declarations }
+    FBreak : Boolean;
   end;
 
 var
@@ -112,16 +113,35 @@ begin
       Sleep(200);
       ListBox1.SetFocus;
       Application.ProcessMessages;
+      if FBreak then
+        break;
     end;
+    if FBreak then
+      break;
   end;
   end
   else
   begin
-    while True do
+    i := 0;
+    while not FBreak do
     begin
-
+      pos := i;
+      action := list[i];
+      action.Execute;
+      Sleep(200);
+      ListBox1.SetFocus;
+      Application.ProcessMessages;
+      Sleep(200);
+      inc(i);
+      if (i > (ListBox1.Items.Count - 1)) then
+        i := 0;
     end;
   end;
+end;
+
+procedure TfrmActions.btnStopClick(Sender: TObject);
+begin
+  FBreak := true;
 end;
 
 procedure TfrmActions.btnAddActionClick(Sender: TObject);
