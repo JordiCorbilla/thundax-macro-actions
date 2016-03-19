@@ -1,5 +1,5 @@
 (*
-  * Copyright (c) 2013 Thundax Macro Actions
+  * Copyright (c) 2013-2016 Thundax Macro Actions
   * All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without
@@ -29,6 +29,7 @@
   * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *)
+
 unit frmAction;
 
 interface
@@ -36,7 +37,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Buttons, ComCtrls, StdCtrls, thundax.lib.actions, ExtCtrls,
-  Vcl.Samples.Spin;
+  Vcl.Samples.Spin, Vcl.Menus;
 
 type
   TfrmActions = class(TForm)
@@ -68,6 +69,10 @@ type
     edtTime: TSpinEdit;
     Label9: TLabel;
     btnStop: TSpeedButton;
+    MainMenu1: TMainMenu;
+    File1: TMenuItem;
+    Load1: TMenuItem;
+    Save1: TMenuItem;
     procedure btnSequenceClick(Sender: TObject);
     procedure btnAddActionClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);

@@ -49,6 +49,7 @@ object frmActions: TfrmActions
     FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
     0000FFFF0000FFFF0000E7E70000C7E300008FF100008E3100008E1000008000
     00008E1000008E3100008FF10000C7E30000E7E70000FFFF0000FFFF0000}
+  Menu = MainMenu1
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
@@ -500,5 +501,18 @@ object frmActions: TfrmActions
     OnTimer = Timer1Timer
     Left = 122
     Top = 104
+  end
+  object MainMenu1: TMainMenu
+    Left = 168
+    Top = 104
+    object File1: TMenuItem
+      Caption = 'File'
+      object Load1: TMenuItem
+        Caption = 'Load'
+      end
+      object Save1: TMenuItem
+        Caption = 'Save'
+      end
+    end
   end
 end

@@ -1,5 +1,5 @@
 (*
-  * Copyright (c) 2013 Thundax Macro Actions
+  * Copyright (c) 2013-2016 Thundax Macro Actions
   * All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without
@@ -97,7 +97,10 @@ uses
   SysUtils,
   dbxjson,
   dbxjsonreflect,
-  dialogs;
+  dialogs,
+  XMLDoc,
+  xmldom,
+  XMLIntf;
 
 { TParameters<T> }
 
@@ -262,7 +265,10 @@ begin
   Case PTypeInfo(TypeInfo(T))^.Kind of
     tkInteger:
       begin
-        description := description + ' (' + IntToStr(param.IntegerConverterP1) + ', ' + IntToStr(param.IntegerConverterP2) + ')';
+        if Faction = TWait then
+          description := description + ' ' + IntToStr(param.IntegerConverterP1) + 's'
+        else
+          description := description + ' (' + IntToStr(param.IntegerConverterP1) + ', ' + IntToStr(param.IntegerConverterP2) + ')';
       end;
     tkString, tkUString, tkChar, tkWChar, tkLString, tkWString, tkUnknown, tkVariant:
       begin
@@ -344,6 +350,8 @@ begin
       Result := 'Press special key';
     TMessage:
       Result := 'Type message';
+    TWait:
+      Result := 'Waiting Time';
   end;
 end;
 
@@ -355,12 +363,17 @@ begin
 end;
 
 procedure TActionList.SaveToFile(const FileName: string);
-// var
-// jsonMarshal: TJSONMarshal;
-// jsonObject: TJSONObject;
+var
+  Document: IXMLDocument;
+  iXMLRootNode, iNode: IXMLNode;
+  i: Integer;
 begin
-  // jsonMarshal := TJSONMarshal.Create;
-  // jsonObject := jsonMarshal.Marshal(Self) as TJSONObject;
+  XMLDoc := TXMLDocument.Create(nil);
+  XMLDoc.Active := true;
+  for i := 0 to count-1 do
+  begin
+    Self[i].ToString
+  end;
 
 end;
 
